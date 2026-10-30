@@ -1,0 +1,41 @@
+storage = "gs://tufops3"
+
+[keys.arlosi]
+github = "arlosi"
+public = """
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEmcIqt4wpIdBCFSZv7EuQkTr7lHjR
+kyR5EgRkaB5Am9Zc61orKQc9DiOTs5e9d84px3ebGh1NhzMGBUZHiGB1ow==
+-----END PUBLIC KEY-----
+"""
+
+[keys.online]
+kms = "gcpkms:projects/rust-tuf/locations/global/keyRings/tufops/cryptoKeys/online/cryptoKeyVersions/1"
+public = """
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEurRtI7rt0SeiUzZYtRIazNqugoF1
+hd46conktN9SA/x/GioyP9MVC1Rf/lK2VFq1mQo0uXL452CDxz+4iVB0EA==
+-----END PUBLIC KEY-----
+"""
+
+[roles.root]
+keys = ["arlosi"]
+threshold = 1
+lifetime = "7d"
+renew = "3d"
+
+[roles.targets]
+keys = ["online"]
+lifetime = "90d"
+renew = "30d"
+
+[roles.snapshot]
+keys = ["online"]
+lifetime = "7d"
+renew = "3d"
+
+[roles.timestamp]
+keys = ["online"]
+lifetime = "1d"
+renew = "12h"
+

@@ -2,14 +2,38 @@
   "signatures": [
     {
       "keyid": "4611725cd599e1d9b02abf11efd1fd835ad8bc664fdd89fd2b03ccfc3bb0ec91",
-      "sig": "304402205b4e21d7f7842368f9c3806ad13f2524dfb8172fe68f604ca5971967239653ed0220693b3a40fe6519955e6ba5d32b69a5a1b4a679bf5e8e618c9bb5376e755a2c83"
+      "sig": "304402207ff69750e827444336f3892908d4b3e8ff996452b60f20333720f2de96cf287302204214fee81c38a9ac32439e0be90ba719e12096520f435f92abe7ab4317bc52bf"
     }
   ],
   "signed": {
     "_type": "targets",
     "spec_version": "1.0.36",
-    "version": 2,
-    "expires": "2027-01-28T21:43:41Z",
-    "targets": {}
+    "version": 3,
+    "expires": "2027-01-28T21:56:32Z",
+    "targets": {},
+    "delegations": {
+      "keys": {
+        "05abb9f08f93763befa351a9cabd12b82270d04efaf2a509571b7ea4e0111788": {
+          "keytype": "ecdsa",
+          "scheme": "ecdsa-sha2-nistp256",
+          "keyval": {
+            "public": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEBZ/UzIWirY2rnsWjfHFZtRPzXXVZ\n9nSuTy7adciRK7oblDQYKauo+XP9uIA91AIv3Fmiag+/mpcptl3UKCP69Q==\n-----END PUBLIC KEY-----\n"
+          }
+        }
+      },
+      "roles": [
+        {
+          "name": "channels-stable",
+          "keyids": [
+            "05abb9f08f93763befa351a9cabd12b82270d04efaf2a509571b7ea4e0111788"
+          ],
+          "threshold": 1,
+          "terminating": true,
+          "paths": [
+            "channels/stable/*"
+          ]
+        }
+      ]
+    }
   }
 }

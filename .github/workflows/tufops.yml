@@ -30,7 +30,7 @@ permissions:
 
 env:
   # The tufops commit to run. Update it to upgrade tufops.
-  TUFOPS_REV: 097c3694e3be0e37306cb5643a865ec05cd370c3
+  TUFOPS_REV: 68cc65dee200050ed97914b815cdd281bab21173
 
 jobs:
   tufops:
@@ -48,7 +48,7 @@ jobs:
       # Built before any credentials are in the job.
       - name: Install tufops
         if: steps.cache.outputs.cache-hit != 'true'
-        run: cargo install --locked --git https://github.com/arlosi/tufops --rev "$TUFOPS_REV"
+        run: cargo install --locked --git https://github.com/arlosi/tufops --rev "$TUFOPS_REV" --no-default-features
       # A token of the tufops GitHub App, which may push to main despite its
       # branch protection. It is revoked when the job ends.
       - id: app

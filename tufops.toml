@@ -30,8 +30,8 @@ MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEBZ/UzIWirY2rnsWjfHFZtRPzXXVZ
 [roles.root]
 keys = ["arlosi"]
 threshold = 1
-lifetime = "7d"
-renew = "3d"
+lifetime = "180d"
+renew = "1d"
 
 [roles.targets]
 keys = ["online"]

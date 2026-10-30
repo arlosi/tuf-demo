@@ -18,6 +18,15 @@ dxZu6mzLJTx/X8HYerxEBN4ClV18iYJVMxgqlQgV6jKjWfcWbPzdVbWYOA==
 -----END PUBLIC KEY-----
 """
 
+[keys.toolchain]
+kms = "projects/rust-tuf/locations/global/keyRings/tuf/cryptoKeys/toolchain/cryptoKeyVersions/1"
+public = """
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEBZ/UzIWirY2rnsWjfHFZtRPzXXVZ
+9nSuTy7adciRK7oblDQYKauo+XP9uIA91AIv3Fmiag+/mpcptl3UKCP69Q==
+-----END PUBLIC KEY-----
+"""
+
 [roles.root]
 keys = ["arlosi"]
 threshold = 1
@@ -39,3 +48,10 @@ keys = ["online"]
 lifetime = "1d"
 renew = "12h"
 
+[[delegations]]
+name = "channels-stable"
+keys = ["toolchain"]
+paths = ["channels/stable/*"]
+threshold = 1
+lifetime = "180d"
+renew = "30d"
